@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TOOL SHEET</h1>
+        <form action="index.html" name="f1" class="block-left" id="forma">
+        <h2>Setup</h2>
+        <select id="select" >
+            part zero select
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>         
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>           
+    
+        </select><br>
+        <input type="text" placeholder="note" name="name1" id="a"><br>
+        
+        
+<hr />
+        <h2>Part zero position(ХУ)</h2><br>       
+        <label class="custom-radio" id="xy">
+        <input type="radio" name="radio1" value="ХУ is center of the part" checked><span> ХУ is center of the part</span><br> 
+        <input type="radio" name="radio1" value="ХУ is edge of the part according to scetch"><span> ХУ is edge of the part according to scetch</span><br>
+        <input type="radio" name="radio1" value="Х is center of the part<br>У is edge of the part according to scetch"><span> Х is center of the part<br>У is edge of the part according to scetch</span><br>
+        <input type="radio" name="radio1" value="Х is edge of the part according to scetch<br>У is center of the part"><span> Х is edge of the part according to scetch<br>У is center of the part</span><br>
+        <input type="radio" name="radio1" value="ХУ is center of hole according to scetch"><span> ХУ is center of hole according to scetch </span><br>
+        <input type="radio" name="radio1" value="60" id="60"> <span>Another description of position  ХУ</span><br><input type="text" id="anotherxy">
+    </label>
+        <hr /> 
+        <h2>Part zero position(Z)</h2><br> 
+        <label class="custom-radio2" id="z">
+        <input type="radio" name="radio2" value="Z is top surface of the part" checked><span>Z top surface of the part</span><br>
+        <input type="radio" name="radio2" value="Z is bottom surface of the part"><span> Z bottom surface of the part</span><br>
+        <input type="radio" name="radio2" value="63"><span>Z - <input type="text" id="v">mm from top surface of the part</span><br>
+        <input type="radio" name="radio2" value="64"><span> Z + <input type="text" id="n"> mm from bottom surface of the part</span><br>
+        <input type="radio" name="radio2" value="65" id="65" ><span>Another description of position Z</span><br>
+        <input type="text" id="anotherz">
+    </label>
+        <hr />
+        <h2>Add programm name</h2><br>
+        <label class="custom-radio3" id="pr">
+            <input type="radio" name="radio3" value="rastochka"><span>%<input type="text" id="rastochkaprog">Borring hole(s) diametr<input type="text" id="rastochkatext">mm</span><br>
+            <input type="radio" name="radio3" value="frezerovka"><span>%<input type="text" id="frezerovkaprog">Finish milling demention<input type="text" id="frezerovkatext">mm</span><br>
+            <input type="radio" name="radio3" value="another" checked><span>%<input type="text" id="anotherprog" >Another description</span><br><input type="text" id="anothertext"><br>
+            
+        </label>
+        <ul id="ul"></ul>
+        <button type="submit" name="action" value="update" id="btns">Add programm</button>
+        
+    <hr />
+    <input type="submit" value="Add to preview" name="sab" class="input" id="btn"> 
+    <h2>Tool table</h2><br>
+        <input type="file" class="custom-file-input" id="file">
+<button id="btn" onclick="readFile(document.getElementById('file'))">Read!</button>
+<div id="out">
+    <table id="table"></table>
+</div>
+<hr />
+    <h2>Add scetch</h2><br>
+        <input type="file" class="custom-file-input" id="img"><br>
+        <hr />
+       
+    </label>
+    
+    </form>
+    <div id="pdf">
+    <div id="ust"></div>
+    <div id="ustnote"></div>
+    <div id="xypos"></div>
+    <div id="posz"></div>
+    <div id="prlist"></div>
+    <h2 id="listtitle"></h2>
+    <ul id='ullist'></ul>
+    <!-- <h2 id="listComp"></h2> -->
+    <div id="toollist"></div>
+    
+    <div class="img-preview">
+        <img>
+      </div>
+    </div>
+    <button onclick = 'generatePDF()' id="download">Save as pdf</button>
+
+
+    
+    <script src="task1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+</body>
+</html>
